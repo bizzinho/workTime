@@ -1,0 +1,1278 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20201.20.0518.1719                               -->
+<workbook original-version='18.1' source-build='2020.1.4 (20201.20.0518.1719)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='perDate (myWorkingHours)' inline='true' name='federated.1dkj6l30ai6fgw15087i106r6k7o' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='myWorkingHours' name='excel-direct.1pnr60g15rbaoe147ehps1f1mndr'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='H:/A_Important/private/mini_projects/workTime/myWorkingHours.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.1pnr60g15rbaoe147ehps1f1mndr' name='perDate' table='[perDate$]' type='table'>
+          <columns gridOrigin='A1:B859:no:A1:B859:0' header='yes' outcome='6'>
+            <column datatype='date' name='Start Date' ordinal='0' />
+            <column datatype='real' name='WorkPerDay' ordinal='1' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Start Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Start Date]</local-name>
+            <parent-name>[perDate]</parent-name>
+            <remote-alias>Start Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WorkPerDay</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WorkPerDay]</local-name>
+            <parent-name>[perDate]</parent-name>
+            <remote-alias>WorkPerDay</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[perDate]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B859:no:A1:B859:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='date' name='[Start Date]' role='dimension' type='quantitative' />
+      <column caption='Work Per Day' datatype='real' name='[WorkPerDay]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.50939' measure-ordering='alphabetic' measure-percentage='0.49061' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Switzerland&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+    </datasource>
+    <datasource caption='myWorkingHours' inline='true' name='federated.0oaheti1570v2w12z2teb03vmb5n' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='myWorkingHours' name='excel-direct.0nxq6io0s4qfow0zsnsqs0b6iook'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='H:/A_Important/private/mini_projects/workTime/myWorkingHours.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.0nxq6io0s4qfow0zsnsqs0b6iook' name='original' table='[original$]' type='table'>
+          <columns gridOrigin='A1:G1843:no:A1:G1843:0' header='yes' outcome='6'>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='datetime' name='Start time' ordinal='1' />
+            <column datatype='datetime' name='End time' ordinal='2' />
+            <column datatype='integer' name='Time (seconds)' ordinal='3' />
+            <column datatype='real' name='Time (hours)' ordinal='4' />
+            <column datatype='string' name='Description' ordinal='5' />
+            <column datatype='date' name='Start Date' ordinal='6' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[original]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Start time</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Start time]</local-name>
+            <parent-name>[original]</parent-name>
+            <remote-alias>Start time</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>End time</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[End time]</local-name>
+            <parent-name>[original]</parent-name>
+            <remote-alias>End time</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Time (seconds)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Time (seconds)]</local-name>
+            <parent-name>[original]</parent-name>
+            <remote-alias>Time (seconds)</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Time (hours)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Time (hours)]</local-name>
+            <parent-name>[original]</parent-name>
+            <remote-alias>Time (hours)</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Description</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Description]</local-name>
+            <parent-name>[original]</parent-name>
+            <remote-alias>Description</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RGB_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Start Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Start Date]</local-name>
+            <parent-name>[original]</parent-name>
+            <remote-alias>Start Date</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[original]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:G1843:no:A1:G1843:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='TravelOnly' datatype='real' name='[Calculation_459367223294701568]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Description] == &quot;Travel&quot; THEN [Time (hours)]&#13;&#10;ELSE 0&#13;&#10;END' />
+      </column>
+      <column caption='WorkOnly' datatype='real' name='[Calculation_459367223297429505]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='If [Description] &lt;&gt; &quot;Travel&quot; THEN [Time (hours)]&#13;&#10;ELSE 0&#13;&#10;END' />
+      </column>
+      <column datatype='string' name='[Description]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='datetime' name='[Start time]' role='dimension' type='ordinal' />
+      <column datatype='real' name='[Time (hours)]' role='measure' type='quantitative' />
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[diff:sum:Time (hours):qk:2]' pivot='key' type='quantitative'>
+        <table-calc diff-options='Relative' ordering-type='Rows' type='Difference'>
+          <address>
+            <value>-1</value>
+          </address>
+        </table-calc>
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[diff:sum:Time (hours):qk]' pivot='key' type='quantitative'>
+        <table-calc diff-options='Relative' ordering-type='Columns' type='Difference'>
+          <address>
+            <value>-1</value>
+          </address>
+        </table-calc>
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[diff:win:sum:Calculation_459367223297429505:qk:2]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-2' ordering-type='Rows' to='1' type='WindowTotal' window-options='IncludeCurrent' />
+        <table-calc diff-options='Relative' ordering-type='Rows' type='Difference'>
+          <address>
+            <value>-1</value>
+          </address>
+        </table-calc>
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[diff:win:sum:Calculation_459367223297429505:qk:4]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-2' ordering-type='Rows' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+        <table-calc diff-options='Relative' ordering-type='Rows' type='Difference'>
+          <address>
+            <value>-1</value>
+          </address>
+        </table-calc>
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[diff:win:sum:Calculation_459367223297429505:qk]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-2' ordering-type='Rows' to='0' type='WindowTotal' window-options='IncludeCurrent' />
+        <table-calc diff-options='Relative' ordering-type='Rows' type='Difference'>
+          <address>
+            <value>-1</value>
+          </address>
+        </table-calc>
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Median' name='[med:Calculation_459367223297429505:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Description]' derivation='None' name='[none:Description:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[pcto:sum:Time (hours):qk:1]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.0oaheti1570v2w12z2teb03vmb5n].[yr:Start time:ok]' ordering-type='Field' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[pcto:sum:Time (hours):qk:2]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='CellInPane' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[pcto:sum:Time (hours):qk:3]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='' ordering-type='Field' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[pcto:sum:Time (hours):qk:4]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Pane' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[pcto:sum:Time (hours):qk:5]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[pcto:sum:Time (hours):qk:7]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='RowInPane' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[pcto:sum:Time (hours):qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Columns' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[rank:sum:Calculation_459367223297429505:qk:2]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' rank-options='Competition,Ascending' type='Rank' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[rank:sum:Calculation_459367223297429505:qk:4]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='RowInPane' rank-options='Competition,Ascending' type='Rank' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[rank:sum:Calculation_459367223297429505:qk:6]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='RowInPane' rank-options='Competition,Descending' type='Rank' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[rank:sum:Calculation_459367223297429505:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' rank-options='Competition,Descending' type='Rank' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223294701568]' derivation='Sum' name='[sum:Calculation_459367223294701568:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[sum:Calculation_459367223297429505:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[sum:Time (hours):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Start time]' derivation='Week-Trunc' name='[twk:Start time:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_459367223297429505]' derivation='Avg' name='[win:avg:Calculation_459367223297429505:qk:5]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-7' ordering-type='CellInPane' to='7' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Avg' name='[win:avg:Calculation_459367223297429505:qk]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-7' ordering-type='Rows' to='7' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:10]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-4' ordering-type='CellInPane' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:12]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-5' ordering-type='CellInPane' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:14]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-6' ordering-type='CellInPane' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:16]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-7' ordering-type='CellInPane' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:18]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-8' ordering-type='CellInPane' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:20]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-9' ordering-type='CellInPane' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:22]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-10' ordering-type='CellInPane' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:24]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-4' ordering-type='CellInPane' to='3' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:26]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-4' ordering-type='CellInPane' to='4' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:28]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-4' ordering-type='CellInPane' to='5' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:30]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-4' ordering-type='CellInPane' to='6' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:32]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-4' ordering-type='CellInPane' to='7' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:34]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-5' ordering-type='CellInPane' to='7' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:36]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-6' ordering-type='CellInPane' to='7' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:38]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-7' ordering-type='CellInPane' to='7' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:3]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-2' ordering-type='Rows' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:40]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-7' ordering-type='Rows' to='7' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:6]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-2' ordering-type='CellInPane' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk:8]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-3' ordering-type='CellInPane' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Calculation_459367223297429505]' derivation='Sum' name='[win:sum:Calculation_459367223297429505:qk]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-2' ordering-type='Rows' to='0' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[win:sum:Time (hours):qk:10]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-4' ordering-type='Rows' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[win:sum:Time (hours):qk:12]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-3' ordering-type='Rows' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[win:sum:Time (hours):qk:14]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-2' ordering-type='Rows' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[win:sum:Time (hours):qk:15]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-2' ordering-field='[federated.0oaheti1570v2w12z2teb03vmb5n].[twk:Start time:qk]' ordering-type='Field' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[win:sum:Time (hours):qk:16]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-2' ordering-type='CellInPane' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[win:sum:Time (hours):qk:18]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-1' ordering-type='Rows' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[win:sum:Time (hours):qk:2]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-2' ordering-type='Rows' to='0' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[win:sum:Time (hours):qk:4]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-3' ordering-type='Rows' to='0' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[win:sum:Time (hours):qk:6]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-4' ordering-type='Rows' to='0' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[win:sum:Time (hours):qk:8]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Avg' from='-4' ordering-type='Rows' to='1' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Time (hours)]' derivation='Sum' name='[win:sum:Time (hours):qk]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Sum' from='-2' ordering-type='Rows' to='0' type='WindowTotal' window-options='IncludeCurrent' />
+      </column-instance>
+      <column-instance column='[Start time]' derivation='Year' name='[yr:Start time:ok]' pivot='key' type='ordinal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.482394' measure-ordering='alphabetic' measure-percentage='0.517606' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Description:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Travel&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Home Office&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;US&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Latina&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Beerse&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Leiden&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Normal&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Belgium&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Conference&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Xi&apos;an&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Schaffhausen&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Gurabo&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[avg:Calculation_459367223388418053:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[diff:sum:Time (hours):qk:2]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[diff:sum:Time (hours):qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[diff:win:sum:Calculation_459367223297429505:qk:2]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[diff:win:sum:Calculation_459367223297429505:qk:4]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[diff:win:sum:Calculation_459367223297429505:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[diff:win:sum:Calculation_459367223388418053:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[med:Calculation_459367223297429505:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[med:Calculation_459367223388418053:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[pcto:sum:Time (hours):qk:1]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[pcto:sum:Time (hours):qk:2]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[pcto:sum:Time (hours):qk:3]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[pcto:sum:Time (hours):qk:4]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[pcto:sum:Time (hours):qk:5]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[pcto:sum:Time (hours):qk:7]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[pcto:sum:Time (hours):qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[rank:sum:Calculation_459367223297429505:qk:2]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[rank:sum:Calculation_459367223297429505:qk:4]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[rank:sum:Calculation_459367223297429505:qk:6]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[rank:sum:Calculation_459367223297429505:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[sum:Calculation_459367223297429505:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[sum:Calculation_459367223388418053:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[sum:Time (hours):qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:avg:Calculation_459367223297429505:qk:5]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:avg:Calculation_459367223297429505:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:avg:Calculation_459367223388418053:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:cnt:Calculation_459367223388418053:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:med:Calculation_459367223388418053:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:10]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:12]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:14]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:16]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:18]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:20]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:22]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:24]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:26]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:28]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:3]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:30]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:32]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:34]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:36]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:38]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:40]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:6]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk:8]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223297429505:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223388418053:qk:2]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223388418053:qk:4]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223388418053:qk:6]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223388418053:qk:8]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Calculation_459367223388418053:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Time (hours):qk:10]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Time (hours):qk:12]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Time (hours):qk:2]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Time (hours):qk:4]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Time (hours):qk:6]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Time (hours):qk:8]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Time (hours):qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1dkj6l30ai6fgw15087i106r6k7o].[sum:WorkPerDay:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[sum:Calculation_459367223294701568:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[sum:Calculation_459367223297429505:qk]:1&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[sum:Calculation_459367223388418053:qk]:1&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Time (hours):qk:14]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Time (hours):qk:15]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Time (hours):qk:16]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0oaheti1570v2w12z2teb03vmb5n].[win:sum:Time (hours):qk:18]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1dkj6l30ai6fgw15087i106r6k7o].[sum:WorkPerDay:qk]:1&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1dkj6l30ai6fgw15087i106r6k7o].[win:sum:WorkPerDay:qk:10]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1dkj6l30ai6fgw15087i106r6k7o].[win:sum:WorkPerDay:qk:12]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1dkj6l30ai6fgw15087i106r6k7o].[win:sum:WorkPerDay:qk:14]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1dkj6l30ai6fgw15087i106r6k7o].[win:sum:WorkPerDay:qk:16]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1dkj6l30ai6fgw15087i106r6k7o].[win:sum:WorkPerDay:qk:2]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1dkj6l30ai6fgw15087i106r6k7o].[win:sum:WorkPerDay:qk:4]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1dkj6l30ai6fgw15087i106r6k7o].[win:sum:WorkPerDay:qk:6]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1dkj6l30ai6fgw15087i106r6k7o].[win:sum:WorkPerDay:qk:8]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1dkj6l30ai6fgw15087i106r6k7o].[win:sum:WorkPerDay:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Switzerland&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='Start time' />
+        <field-sort-custom-order field='Calculation_459367223388250116' />
+        <field-sort-custom-order field='Calculation_459367223388418053' />
+        <field-sort-custom-order field='End time' />
+        <field-sort-custom-order field='Time (seconds)' />
+        <field-sort-custom-order field='Time (hours)' />
+        <field-sort-custom-order field='Income' />
+        <field-sort-custom-order field='Description' />
+        <field-sort-custom-order field='Job' />
+        <field-sort-custom-order field='Calculation_459367223294701568' />
+        <field-sort-custom-order field='Calculation_459367223297429505' />
+      </field-sort-info>
+      <datasource-dependencies datasource='federated.1dkj6l30ai6fgw15087i106r6k7o'>
+        <column caption='Work Per Day' datatype='real' name='[WorkPerDay]' role='measure' type='quantitative' />
+        <column-instance column='[WorkPerDay]' derivation='Sum' name='[sum:WorkPerDay:qk]' pivot='key' type='quantitative' />
+        <column-instance column='[WorkPerDay]' derivation='Sum' name='[win:sum:WorkPerDay:qk:10]' pivot='key' type='quantitative'>
+          <table-calc aggregation='Avg' from='-3' ordering-type='Rows' to='4' type='WindowTotal' window-options='IncludeCurrent' />
+        </column-instance>
+        <column-instance column='[WorkPerDay]' derivation='Sum' name='[win:sum:WorkPerDay:qk:12]' pivot='key' type='quantitative'>
+          <table-calc aggregation='Avg' from='-4' ordering-type='Rows' to='4' type='WindowTotal' window-options='IncludeCurrent' />
+        </column-instance>
+        <column-instance column='[WorkPerDay]' derivation='Sum' name='[win:sum:WorkPerDay:qk:14]' pivot='key' type='quantitative'>
+          <table-calc aggregation='Avg' from='-5' ordering-type='Rows' to='4' type='WindowTotal' window-options='IncludeCurrent' />
+        </column-instance>
+        <column-instance column='[WorkPerDay]' derivation='Sum' name='[win:sum:WorkPerDay:qk:16]' pivot='key' type='quantitative'>
+          <table-calc aggregation='Avg' from='-5' ordering-type='Rows' to='5' type='WindowTotal' window-options='IncludeCurrent' />
+        </column-instance>
+        <column-instance column='[WorkPerDay]' derivation='Sum' name='[win:sum:WorkPerDay:qk:2]' pivot='key' type='quantitative'>
+          <table-calc aggregation='Avg' from='-2' ordering-type='Rows' to='1' type='WindowTotal' window-options='IncludeCurrent' />
+        </column-instance>
+        <column-instance column='[WorkPerDay]' derivation='Sum' name='[win:sum:WorkPerDay:qk:4]' pivot='key' type='quantitative'>
+          <table-calc aggregation='Avg' from='-2' ordering-type='Rows' to='2' type='WindowTotal' window-options='IncludeCurrent' />
+        </column-instance>
+        <column-instance column='[WorkPerDay]' derivation='Sum' name='[win:sum:WorkPerDay:qk:6]' pivot='key' type='quantitative'>
+          <table-calc aggregation='Avg' from='-2' ordering-type='Rows' to='3' type='WindowTotal' window-options='IncludeCurrent' />
+        </column-instance>
+        <column-instance column='[WorkPerDay]' derivation='Sum' name='[win:sum:WorkPerDay:qk:8]' pivot='key' type='quantitative'>
+          <table-calc aggregation='Avg' from='-2' ordering-type='Rows' to='4' type='WindowTotal' window-options='IncludeCurrent' />
+        </column-instance>
+        <column-instance column='[WorkPerDay]' derivation='Sum' name='[win:sum:WorkPerDay:qk]' pivot='key' type='quantitative'>
+          <table-calc aggregation='Avg' from='-2' ordering-type='Rows' to='0' type='WindowTotal' window-options='IncludeCurrent' />
+        </column-instance>
+      </datasource-dependencies>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Travel'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='myWorkingHours' name='federated.0oaheti1570v2w12z2teb03vmb5n' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0oaheti1570v2w12z2teb03vmb5n'>
+            <column caption='TravelOnly' datatype='real' name='[Calculation_459367223294701568]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Description] == &quot;Travel&quot; THEN [Time (hours)]&#13;&#10;ELSE 0&#13;&#10;END' />
+            </column>
+            <column datatype='string' name='[Description]' role='dimension' type='nominal' />
+            <column datatype='datetime' name='[Start time]' role='dimension' type='ordinal' />
+            <column datatype='real' name='[Time (hours)]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_459367223294701568]' derivation='Sum' name='[sum:Calculation_459367223294701568:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Start time]' derivation='Year' name='[yr:Start time:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.0oaheti1570v2w12z2teb03vmb5n].[sum:Calculation_459367223294701568:qk]</rows>
+        <cols>[federated.0oaheti1570v2w12z2teb03vmb5n].[yr:Start time:ok]</cols>
+      </table>
+      <simple-id uuid='{1B21E578-DD2A-4F5E-9B3F-790F6018AA64}' />
+    </worksheet>
+    <worksheet name='WorkPerLocation'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='myWorkingHours' name='federated.0oaheti1570v2w12z2teb03vmb5n' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0oaheti1570v2w12z2teb03vmb5n'>
+            <column datatype='string' name='[Description]' role='dimension' type='nominal' />
+            <column datatype='datetime' name='[Start time]' role='dimension' type='ordinal' />
+            <column datatype='real' name='[Time (hours)]' role='measure' type='quantitative' />
+            <column-instance column='[Description]' derivation='None' name='[none:Description:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Time (hours)]' derivation='Sum' name='[pcto:sum:Time (hours):qk:2]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='CellInPane' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Time (hours)]' derivation='Sum' name='[sum:Time (hours):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Start time]' derivation='Year' name='[yr:Start time:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.0oaheti1570v2w12z2teb03vmb5n].[none:Description:nk]' direction='ASC' using='[federated.0oaheti1570v2w12z2teb03vmb5n].[sum:Time (hours):qk]' />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0oaheti1570v2w12z2teb03vmb5n].[none:Description:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0oaheti1570v2w12z2teb03vmb5n].[yr:Start time:ok]</rows>
+        <cols>[federated.0oaheti1570v2w12z2teb03vmb5n].[pcto:sum:Time (hours):qk:2]</cols>
+      </table>
+      <simple-id uuid='{CC9F314B-EC87-41ED-A0A0-AD7D37A53C6A}' />
+    </worksheet>
+    <worksheet name='WorkPerWeekday'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='myWorkingHours' name='federated.0oaheti1570v2w12z2teb03vmb5n' />
+            <datasource caption='perDate (myWorkingHours)' name='federated.1dkj6l30ai6fgw15087i106r6k7o' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1dkj6l30ai6fgw15087i106r6k7o'>
+            <column datatype='date' name='[Start Date]' role='dimension' type='quantitative' />
+            <column caption='Work Per Day' datatype='real' name='[WorkPerDay]' role='measure' type='quantitative' />
+            <column-instance column='[WorkPerDay]' derivation='Sum' name='[rank:sum:WorkPerDay:qk:3]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.1dkj6l30ai6fgw15087i106r6k7o].[wd:Start Date:ok]' ordering-type='Field' rank-options='Competition,Descending' type='Rank' />
+            </column-instance>
+            <column-instance column='[WorkPerDay]' derivation='Sum' name='[sum:WorkPerDay:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Start Date]' derivation='Year-Trunc' name='[tyr:Start Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Start Date]' derivation='Weekday' name='[wd:Start Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1dkj6l30ai6fgw15087i106r6k7o].[rank:sum:WorkPerDay:qk:3]' palette='blue_10_0' reverse='true' type='interpolated' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='line-visibility' id='refline0' value='on' />
+            <format attr='line-pattern-only' id='refline0' value='dashed' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='7' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1dkj6l30ai6fgw15087i106r6k7o].[rank:sum:WorkPerDay:qk:3]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1dkj6l30ai6fgw15087i106r6k7o].[sum:WorkPerDay:qk]</rows>
+        <cols>([federated.1dkj6l30ai6fgw15087i106r6k7o].[tyr:Start Date:ok] / [federated.1dkj6l30ai6fgw15087i106r6k7o].[wd:Start Date:ok])</cols>
+        <show-full-range>
+          <column>[federated.0oaheti1570v2w12z2teb03vmb5n].[Start time]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{3393EA67-34B9-4849-B4FE-800F8F11BD34}' />
+    </worksheet>
+    <worksheet name='WorkingHoursOverTime'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='myWorkingHours' name='federated.0oaheti1570v2w12z2teb03vmb5n' />
+            <datasource caption='perDate (myWorkingHours)' name='federated.1dkj6l30ai6fgw15087i106r6k7o' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0oaheti1570v2w12z2teb03vmb5n' />
+          <datasource-dependencies datasource='federated.1dkj6l30ai6fgw15087i106r6k7o'>
+            <column datatype='date' name='[Start Date]' role='dimension' type='quantitative' />
+            <column caption='Work Per Day' datatype='real' name='[WorkPerDay]' role='measure' type='quantitative' />
+            <column-instance column='[WorkPerDay]' derivation='Sum' name='[sum:WorkPerDay:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Start Date]' derivation='Day-Trunc' name='[tdy:Start Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[WorkPerDay]' derivation='Sum' name='[win:sum:WorkPerDay:qk:16]' pivot='key' type='quantitative'>
+              <table-calc aggregation='Avg' from='-5' ordering-type='Rows' to='5' type='WindowTotal' window-options='IncludeCurrent' />
+            </column-instance>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1dkj6l30ai6fgw15087i106r6k7o].[win:sum:WorkPerDay:qk:16]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
+            <encoding attr='space' class='0' field='[federated.1dkj6l30ai6fgw15087i106r6k7o].[sum:WorkPerDay:qk]' field-type='quantitative' max='24.0' min='0.0' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='line-visibility' id='refline0' value='on' />
+            <format attr='line-pattern-only' id='refline0' value='dashed' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0oaheti1570v2w12z2teb03vmb5n].[:Measure Names]' />
+            </encodings>
+            <reference-line axis-column='[federated.1dkj6l30ai6fgw15087i106r6k7o].[sum:WorkPerDay:qk]' enable-instant-analytics='true' formula='constant' id='refline0' label-type='value' scope='per-pane' value='8.0' value-column='[federated.1dkj6l30ai6fgw15087i106r6k7o].[sum:WorkPerDay:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.75762432813644409' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1dkj6l30ai6fgw15087i106r6k7o].[sum:WorkPerDay:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0oaheti1570v2w12z2teb03vmb5n].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.75762432813644409' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='6' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1dkj6l30ai6fgw15087i106r6k7o].[win:sum:WorkPerDay:qk:16]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0oaheti1570v2w12z2teb03vmb5n].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.8790607452392578' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1dkj6l30ai6fgw15087i106r6k7o].[sum:WorkPerDay:qk] + [federated.1dkj6l30ai6fgw15087i106r6k7o].[win:sum:WorkPerDay:qk:16])</rows>
+        <cols>[federated.1dkj6l30ai6fgw15087i106r6k7o].[tdy:Start Date:qk]</cols>
+      </table>
+      <simple-id uuid='{B6CD08C6-8467-4D3B-A953-CE1D19296219}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.5' source-height='75'>
+    <window class='worksheet' maximized='true' name='WorkingHoursOverTime'>
+      <cards>
+        <edge name='left'>
+          <strip size='106'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='20'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='106'>
+            <card pane-specification-id='5' param='[federated.0oaheti1570v2w12z2teb03vmb5n].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0oaheti1570v2w12z2teb03vmb5n].[none:Description:nk]</field>
+            <field>[federated.0oaheti1570v2w12z2teb03vmb5n].[yr:Calculation_459367223388250116:ok]</field>
+            <field>[federated.0oaheti1570v2w12z2teb03vmb5n].[yr:Start time:ok]</field>
+            <field>[federated.1dkj6l30ai6fgw15087i106r6k7o].[yr:Start Date:ok]</field>
+          </color-one-way>
+        </highlight>
+        <floating-toolbar-visibility value='1' />
+      </viewpoint>
+      <simple-id uuid='{F78CCE28-2755-459A-947A-064267A4720E}' />
+    </window>
+    <window class='worksheet' name='Travel'>
+      <cards>
+        <edge name='left'>
+          <strip size='106'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='20'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0oaheti1570v2w12z2teb03vmb5n].[yr:Start time:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{656D3297-522A-4D7F-A181-638A2A2B5755}' />
+    </window>
+    <window class='worksheet' name='WorkPerLocation'>
+      <cards>
+        <edge name='left'>
+          <strip size='106'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='20'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='106'>
+            <card pane-specification-id='0' param='[federated.0oaheti1570v2w12z2teb03vmb5n].[none:Description:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-height' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0oaheti1570v2w12z2teb03vmb5n].[none:Description:nk]</field>
+            <field>[federated.0oaheti1570v2w12z2teb03vmb5n].[yr:Start time:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{5730B26D-4F33-48B1-862C-FE289465197C}' />
+    </window>
+    <window class='worksheet' name='WorkPerWeekday'>
+      <cards>
+        <edge name='left'>
+          <strip size='257'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='20'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='7' param='[federated.1dkj6l30ai6fgw15087i106r6k7o].[rank:sum:WorkPerDay:qk:3]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0oaheti1570v2w12z2teb03vmb5n].[yr:Start time:ok]</field>
+            <field>[federated.1dkj6l30ai6fgw15087i106r6k7o].[rank:sum:WorkPerDay:qk:3]</field>
+            <field>[federated.1dkj6l30ai6fgw15087i106r6k7o].[tyr:Start Date:qk]</field>
+            <field>[federated.1dkj6l30ai6fgw15087i106r6k7o].[wd:Start Date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{495AA266-C09E-4EF0-A9E6-8E6A1BE37F61}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Travel' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='WorkPerLocation' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAAFEklEQVR4nO3dS0tjZwDG8efkxNtUx1vx0io6OghS6CxKKf1eXc736Krrbrorhe4LQ7vp
+      DTrTzmA1UeKMg4lG46jJOW8XBWkp1KOc14R5/r9VXPjyIPyTYyAnSQghCDBV6fcAoJ8IANYI
+      ANYIANYIANaiBBBC0KC9uTRoeyQ2FRF7T7RXgDzPYx19K1mW9XvCf7DperH3cAkEawQAawQA
+      awQAawQAawQAawQAawQAawQAa9VYB3/x/efaP2nEOv7mQpCSpN8r/u0t2PQ4+0RpxOfRNPLf
+      KFoAtda2tptbsY7HgAi9FcW8kIj99MAlEKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwR
+      AKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwRAKwVvDdo
+      UKO+o+PTjibfXVRzv64sHdXm+pJ+/Pl3ffTpxzp+uafXRx29v7yiiXsjcVcDJSn4CpBocXlV
+      42ND6rZfKZ1c1lSa62JoQvOzUwqStndqSkKmbm+wvmcW+D8FAwj68/lTVcfntLS0qNA9VzcP
+      GvrHb4++M6GNjQ01dutxlgIRFP8fIKmo3TxQ+3JYE0MXqt6fUegc6eTNmXZre3q4uqw/nr/Q
+      ytpaxLlAuQr+D5BofWPz6qfp++tXjz98NHX1eHNzWpIUQihnHRAZ7wLBGgHAGgHAGgHAGgHA
+      GgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHAGgHA
+      GgHAGgHAGgHAGgHAWhIi3MgzhKC9Vl3d/LLso28ty3OllcHq/W3Y9CBMKlEScU+mtJJGOz9a
+      AHmeK03jDb+pXq+narXgvYDvCJuuF3vPYD39AHeMAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCN
+      AGCNAGCNAGCNAGCNAGCNAGCNAGCNAGCNAGAt2mfNvn32tZpvDmMdf2MhBCVJvM+u3gabrhd7
+      T7QAnux8p+3mVqzjgVJwCQRrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABr
+      BABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBABrBe8NGvSqsavW8anm
+      l1bV3K8rS8e0vrKgp7+90OajD/R6t6Z250xD96b1YHkh7mqgJIVfAWbn3tPi3JQOdrd0kU6q
+      enGiTiaNjQwrV6LF5VWND1c0OTMTcy9QqoIBJDpo1PXyqKuHKwtKklQVJapUR5RW/r51dQiZ
+      Djs9zY6PRJwLlKtgAEHNZkvqnaudjalyfqCz6qjSsyMdtlqq1fZ03j7U/NJa3LVAyZIQQij7
+      0BCCHn/zGd8PgIHHu0CwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCw
+      RgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwRgCwFu3eoD/sPNHp5UnZR99a
+      nueqVAardzZdL/aeaAHkea40Tcs++tZ6vZ6q1YLfB3JH2HS92HsGJ3WgDwgA1ggA1ggA1ggA
+      1ggA1ggA1ggA1ggA1ggA1ggA1ggA1ggA1ggA1ggA1ggA1ggA1ggA1qJ91uzXxk8663ZiHX9j
+      g/ZZV4lNRcTeEy2Ar375UtvNrVjHA6UYnNSBPiAAWCMAWCMAWCMAWCMAWCMAWCMAWCMAWCMA
+      WCMAWPsLTBVWoRaVhZoAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='WorkPerWeekday' width='192'>
+      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
+      1aVIonr5CfwsJHuSh3KcAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='WorkingHoursOverTime' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

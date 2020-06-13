@@ -1,0 +1,4 @@
+- outliers
+- mark holidays?
+- moving average should take into account non-working days...
+- update gmail reader
